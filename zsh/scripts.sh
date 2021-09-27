@@ -29,3 +29,19 @@ ftmuxp() {
     fi
 }
 
+vman () {
+    nvim -c "SuperMan $*"
+
+    if [ "$?" !=0 ]; then
+        echo "No manual entry for $*"
+    fi
+}
+
+wikipedia() {
+    lynx -vikeys -accept_all_cookies "https://de.wikipedia.org/wiki?search=$@"
+}
+
+duckduckgo() {
+    lynx -vikeys -accept_all_cookies "https://lite.duckduckgo.com/lite/?q='$@'"
+}
+
